@@ -14,17 +14,22 @@ import { HttpModule } from '@angular/http';
 import { HttpService } from '../service/httpUtil';
 import { ProductService } from '../service/product.service';
 
+import {BaiduMapModule} from "angular2-baidu-map";
+import { MapPage } from '../pages/map/map';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MapPage
   ],
   imports: [
     HttpModule,
     BrowserModule,
+    BaiduMapModule.forRoot({ak: 'your ak'}),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -33,7 +38,8 @@ import { ProductService } from '../service/product.service';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MapPage
   ],
   providers: [
     StatusBar,
